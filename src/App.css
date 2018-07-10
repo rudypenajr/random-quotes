@@ -1,50 +1,31 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  vertical-align: baseline;
+/* @import url(https://fonts.googleapis.com/css?family=Raleway:400,500); */
+
+.App {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 
-div {
-  position: relative;
-  z-index: 2;
-}
-
-body {
-  background-color: #333;
-  color: #333;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.footer {
-  width: 450px;
+.quote-box, .tags ul {
+  margin: 0 auto;
   text-align: center;
-  display: block;
-  margin: 15px auto 30px auto;
-  font-size: 0.8em;
-  color: #fff;
-}
-.footer a {
-  font-weight: 500;
-  text-decoration: none;
-  color: #fff;
+  /* width: 80%; */
+  width: auto;
 }
 
-#quote-box {
+.quote-box {
+  background-color: #fff;
   border-radius: 3px;
+  /* box-shadow: 5px 10px #888888; */
+  filter: drop-shadow(0 0 30px #333);
+  display: table;
+  margin-top: 100px;
+  padding: 40px 50px;
   position: relative;
   width: 450px;
-  padding: 40px 50px;
-  display: table;
-  background-color: #fff;
 }
-#quote-box .quote-text {
+
+.quote-box .quote-text {
   text-align: center;
   width: 450px;
   height: auto;
@@ -52,11 +33,18 @@ body {
   font-weight: 500;
   font-size: 1.75em;
 }
-#quote-box .quote-text i {
-  font-size: 1.0em;
-  margin-right: 0.4em;
+
+.quote-box .quote-text i::before {
+  content: "\201C";
 }
-#quote-box .quote-author {
+
+.quote-box .quote-text i {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.0em;
+  /* margin-right: 0.4em; */
+}
+
+.quote-box .quote-author {
   width: 450px;
   height: auto;
   clear: both;
@@ -64,17 +52,19 @@ body {
   font-size: 1em;
   text-align: right;
 }
-#quote-box .buttons {
+
+.quote-box .buttons {
   width: 450px;
   margin: auto;
   display: block;
 }
-#quote-box .buttons .button {
+
+.quote-box .buttons .button {
   height: 38px;
   border: none;
   border-radius: 3px;
   color: #fff;
-  background-color: #333;
+  /* background-color: #333; */
   outline: none;
   font-size: 0.85em;
   padding: 8px 18px 6px 18px;
@@ -82,10 +72,13 @@ body {
   opacity: 1;
   cursor: pointer;
 }
-#quote-box .buttons .button:hover {
+
+.quote-box .buttons .button:hover {
   opacity: 0.9;
 }
-#quote-box .buttons .button#tweet-quote, #quote-box .buttons .button#tumblr-quote {
+
+.quote-box .buttons .button#tweet-quote,
+.quote-box .buttons .button#tumblr-quote {
   float: left;
   padding: 0px;
   padding-top: 8px;
@@ -95,36 +88,33 @@ body {
   height: 30px;
   width: 40px;
 }
-#quote-box .buttons .button#new-quote {
+
+.quote-box .buttons .button#new-quote {
   float: right;
 }
 
+/* Tags */
 
-/* .App {
+.tags {
+  clear: both;
+  display: block;
+  margin-top: 100px;
+}
+
+.tags ul {
   text-align: center;
+  list-style: inside;
+  width: 80%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.tags li {
+  float: left;
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.tags li a {
+  background: #fff;
+  display: block;
+  margin: 10px;
+  padding: 5px 10px;
 }
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} */
