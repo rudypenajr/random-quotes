@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import Quote from './components/Quote'
 
 const API = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
 
@@ -31,6 +32,10 @@ class App extends Component {
       })
   }
 
+  componentWillUnmount() {
+    console.log('unmounting')
+  }
+
   randomizeQuote() {
     const vals = JSON.parse(localStorage.getItem('quotes'))
     
@@ -58,7 +63,6 @@ class App extends Component {
 
   handleNext(event) {
     event.preventDefault()
-    
     this.randomizeQuote()
   }
 
@@ -73,9 +77,7 @@ class App extends Component {
       <div className="App">        
         <div id="wrapper">
           <div id="quote-box">
-            <div className="quote-text">
-              <i className="fa fa-quote-left"> </i><span id="text">{this.state.quote}</span>
-            </div>
+            <Quote {...this.state} />
             <div className="quote-author">
               - <span id="author">{this.state.author}</span>
             </div>
