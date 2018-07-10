@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Quote from './components/Quote'
+import Author from './components/Author'
 
 const API = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
 
@@ -78,9 +79,7 @@ class App extends Component {
         <div id="wrapper">
           <div id="quote-box">
             <Quote {...this.state} />
-            <div className="quote-author">
-              - <span id="author">{this.state.author}</span>
-            </div>
+            <Author {...this.state} />
             <div className="buttons">
               <a className="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
                 <i className="fa fa-twitter"></i>
