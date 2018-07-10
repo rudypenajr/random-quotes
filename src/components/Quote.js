@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Quote = function(props) {
-    console.log('props', props)
     const iStyles = {
         color: props.color.backgroundColor
     }

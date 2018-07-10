@@ -12,7 +12,7 @@ class Tags extends Component {
 
             list.push(
                 <li key={idx}>
-                    <a href="#" className={cn} onClick={this.props.handleTagClick}>
+                    <a href="#{name}" className={cn} onClick={this.props.handleTagClick}>
                         {name}
                     </a>
                 </li>

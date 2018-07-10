@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+// import twitter from './icons8-twitter-80.svg';
 import './App.css';
 import Quote from './components/Quote'
 import Author from './components/Author'
 import Tags from './components/Tags'
+import Twitter from './components/Twitter'
+import Tumblr from './components/Tumblr';
 
 const API = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
 
@@ -41,9 +43,9 @@ class App extends Component {
     const base = JSON.parse(localStorage.getItem('quotes'))
     let vals = [...base]
     if (this.state.isFiltered) {
-      console.log('state', this.state.filteredBy)
+      // console.log('state', this.state.filteredBy)
       vals = vals.filter((o) => o.author === this.state.filteredBy)
-      console.log('vals', vals)
+      // console.log('vals', vals)
     }
     
     var idx = Math.floor(Math.random() * vals.length)
@@ -87,8 +89,6 @@ class App extends Component {
 
   randomizeBackground() {
     return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-    // let body = document.getElementsByTagName('body')
-    // body.style.background = hue
   }
 
   render() {
@@ -97,7 +97,6 @@ class App extends Component {
         <h1>Loading...</h1>
       )
     }
-
 
     const appStyles = {
       'backgroundColor': this.randomizeBackground()
@@ -110,12 +109,8 @@ class App extends Component {
             <Quote {...this.state} color={appStyles} />
             <Author {...this.state} />
             <div className="buttons">
-              <a className="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
-                <i className="fa fa-twitter"></i>
-              </a>
-              <a className="button" id="tumblr-quote" title="Post this quote on tumblr!" target="_blank">
-                <i className="fa fa-tumblr"></i>
-              </a>
+              <Twitter {...this.state} color={appStyles} />
+              <Tumblr {...this.state} color={appStyles} />
               <button onClick={this.handleNext} style={appStyles} className="button" id="new-quote">New quote</button>
             </div>
           </div>

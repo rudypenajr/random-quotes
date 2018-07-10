@@ -26,12 +26,13 @@
 }
 
 .quote-box .quote-text {
-  text-align: center;
-  width: 450px;
-  height: auto;
   clear: both;
   font-weight: 500;
   font-size: 1.75em;
+  height: auto;
+  /* min-height: 220px; */
+  text-align: center;
+  width: 450px;
 }
 
 .quote-box .quote-text i::before {
@@ -74,27 +75,43 @@
 }
 
 .quote-box .buttons .button:hover {
-  opacity: 0.9;
+  filter: drop-shadow(0 0 4px #333);
+  opacity: 0.8;
 }
 
-.quote-box .buttons .button#tweet-quote,
-.quote-box .buttons .button#tumblr-quote {
+.quote-box .buttons a.button {
+  font-size: 1.2em;  
   float: left;
-  padding: 0px;
-  padding-top: 8px;
-  text-align: center;
-  font-size: 1.2em;
-  margin-right: 5px;
   height: 30px;
+  margin-right: 5px;
+  /* padding: 0px; */
+  /* padding-top: 8px; */
+  padding: 8px 5px;
+  text-align: center;
   width: 40px;
+}
+
+.quote-box .buttons a.button img {
+  display: block;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.quote-box .buttons #tumblr-quote img {
+  position: relative;
+  top: -4px;
 }
 
 .quote-box .buttons .button#new-quote {
   float: right;
 }
 
-/* Tags */
 
+
+
+/* Tags */
 .tags {
   clear: both;
   display: block;
