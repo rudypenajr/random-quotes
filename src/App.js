@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Quote from './components/Quote'
 import Author from './components/Author'
-import Tags from './components/Tags'
+// import Tags from './components/Tags'
 import Twitter from './components/Twitter'
 import Tumblr from './components/Tumblr';
 
@@ -115,7 +115,7 @@ class App extends Component {
             </div>
           </div>
 
-          <Tags handleTagClick={this.handleTagClick} filteredBy={this.state.filteredBy} authors={this.state.authors} />
+          {/* <Tags handleTagClick={this.handleTagClick} filteredBy={this.state.filteredBy} authors={this.state.authors} /> */}
         </div>
       </div>
     );
